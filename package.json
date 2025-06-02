@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "Curso 'Cypress, do Zero à Nuvem' da Escola Talking About Testing.",
   "main": "src/index.html",
+  "type": "module",
   "scripts": {
     "cy:open": "cypress open",
-    "test": "cypress run",
+    "cy:open:mobile": "cypress open --config viewportWidth=410,viewportHeight=860",
+    "cy:run": "cypress run",
+    "cy:run:mobile": "cypress run --config viewportWidth=410,viewportHeight=860",
     "build": "tsc"
   },
   "repository": {
@@ -25,7 +28,7 @@
   "license": "MIT",
   "homepage": "https://github.com/wlsf82/cypress-do-zero-a-nuvem#readme",
   "devDependencies": {
-    "cypress": "^14.3.3",
+    "cypress": "12.10.0",
     "typescript": "^5.8.3"
   }
 }

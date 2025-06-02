@@ -1,11 +1,10 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["es5", "dom"],
-    "sourceMap": true,
+    "target": "ES2015",
+    "lib": ["ES2015", "dom"],
     "types": ["cypress", "node"],
     "module": "NodeNext",
     "outDir": "dist"
   },
-  "include": ["**/*.ts"]
+  "include": ["**/*.ts", "cypress.config.ts"]
 }

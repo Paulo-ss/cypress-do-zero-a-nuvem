@@ -1,7 +1,7 @@
 let isPhoneRequired = false;
 
-const phoneLabelSpan = document.querySelector(".phone-label-span");
-const phoneField = document.getElementById("phone");
+const phoneLabelSpan: HTMLElement = document.querySelector(".phone-label-span");
+const phoneField = document.getElementById("phone") as HTMLInputElement;
 
 document
   .querySelector("#phone-checkbox")
@@ -11,25 +11,42 @@ document
     } else {
       phoneLabelSpan.style.display = "none";
     }
+
     phoneField.required = !isPhoneRequired;
     isPhoneRequired = !isPhoneRequired;
   });
 
-document.querySelector('button[type="submit"]').addEventListener(
-  "click",
+document.getElementById("form").addEventListener(
+  "submit",
   function (event) {
     event.preventDefault();
 
-    const firstNameField = document.getElementById("firstName");
-    const lastNameField = document.getElementById("lastName");
-    const emailField = document.getElementById("email");
-    const textareaField = document.getElementById("open-text-area");
-    const productField = document.getElementById("product");
-    const helpRadio = document.querySelector('input[value="ajuda"]');
-    const emailCheckbox = document.getElementById("email-checkbox");
-    const phoneCheckbox = document.getElementById("phone-checkbox");
-    const fileField = document.querySelector('input[type="file"]');
-    const successMessage = document.querySelector(".success");
+    const firstNameField = document.getElementById(
+      "firstName"
+    ) as HTMLInputElement;
+    const lastNameField = document.getElementById(
+      "lastName"
+    ) as HTMLInputElement;
+    const emailField = document.getElementById("email") as HTMLInputElement;
+    const textareaField = document.getElementById(
+      "open-text-area"
+    ) as HTMLTextAreaElement;
+    const productField = document.getElementById(
+      "product"
+    ) as HTMLSelectElement;
+    const helpRadio = document.querySelector(
+      'input[value="ajuda"]'
+    ) as HTMLInputElement;
+    const emailCheckbox = document.getElementById(
+      "email-checkbox"
+    ) as HTMLInputElement;
+    const phoneCheckbox = document.getElementById(
+      "phone-checkbox"
+    ) as HTMLInputElement;
+    const fileField = document.querySelector(
+      'input[type="file"]'
+    ) as HTMLInputElement;
+    const successMessage: HTMLElement = document.querySelector(".success");
 
     if (
       !firstNameField.value ||
@@ -73,7 +90,7 @@ document.querySelector('button[type="submit"]').addEventListener(
 );
 
 function showAndHideErrorMessage() {
-  const errorMessage = document.querySelector(".error");
+  const errorMessage: HTMLElement = document.querySelector(".error");
   errorMessage.style.display = "block";
 
   scroll(0, 0);
@@ -83,7 +100,7 @@ function showAndHideErrorMessage() {
   return;
 }
 
-function hideMessageAfterTimeout(element) {
+function hideMessageAfterTimeout(element: HTMLElement) {
   setTimeout(function () {
     element.style.display = "none";
   }, 3000);
